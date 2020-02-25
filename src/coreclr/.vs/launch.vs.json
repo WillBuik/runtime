@@ -1,0 +1,56 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "CoreRun.exe (Install)",
+      "name": "CoreRun.exe (Install)",
+      "InstallOutput": "C:\\Users\\wibu\\source\\repos\\runtime\\artifacts\\tests\\coreclr\\Windows_NT.x64.Debug\\Tests\\Core_Root\\CoreRun.exe",
+      "args": [
+        "C:\\Users\\wibu\\source\\repos\\HelloVSCoreCLR\\HelloVSCoreCLR\\bin\\Debug\\netcoreapp3.1\\HelloVSCoreCLR.dll"
+      ]
+    },
+    {
+      "type": "cppdbg",
+      "name": "corerun (Install)",
+      "project": "CMakeLists.txt",
+      "projectTarget": "corerun (Install)",
+      "cwd": "${debugInfo.defaultWorkingDirectory}",
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "remoteMachineName": "${debugInfo.remoteMachineName}",
+      "setupCommands": [
+        {
+          "text": "Documentation: Learn how to configure remote debugging",
+          "description": "See here for more info http://aka.ms/vslinuxdebug",
+          "ignoreFailures": true
+        },
+        {
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "pipeTransport": {
+        "pipeProgram": "${debugInfo.shellexecPath}",
+        "pipeArgs": [
+          "/s",
+          "${debugInfo.remoteMachineId}",
+          "/p",
+          "${debugInfo.parentProcessId}",
+          "/c",
+          "${debuggerCommand}",
+          "--tty=${debugInfo.tty}"
+        ],
+        "debuggerPath": "/usr/bin/gdb"
+      },
+      "visualizerFile": "${debugInfo.linuxNatvisPath}",
+      "showDisplayString": true,
+      "program": "/home/will/runtime/artifacts/tests/coreclr/Linux.x64.Debug/Tests/Core_Root/corerun",
+      "args": [
+        "/home/will/HelloVSCoreCLR.dll"
+      ]
+    }
+  ]
+}
