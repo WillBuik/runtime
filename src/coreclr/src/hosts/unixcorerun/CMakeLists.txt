@@ -31,3 +31,4 @@ if(NOT CLR_CMAKE_TARGET_ANDROID)
 endif()
 
 install_clr(TARGETS corerun)
+install(TARGETS corerun)

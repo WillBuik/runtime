@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Windows_NT.x64.Debug",
+            "cacheRoot": "C:\\Users\\wibu\\source\\repos\\runtime\\artifacts\\obj\\coreclr\\Windows_NT.x64.Debug"
+        },
+        {
+            "name": "Linux.x64.Debug",
+            "cacheRoot": "/home/will/runtime/artifacts/obj/coreclr/Linux.x64.Debug",
+            "remoteMachineName": "${defaultRemoteMachineName}",
+            "remoteCopySources": true,
+            "remoteCopySourcesOutputVerbosity": "Normal",
+            "remoteCopySourcesMethod": "rsync",
+            "remoteCopySourcesExclusionList": [
+                ".vs",
+                ".git",
+                "out",
+                "scripts"
+            ],
+            "rsyncCommandArgs": "-t --delete --delete-excluded",
+            "remoteCopyBuildOutput": false,
+            "inheritEnvironments": [
+                "linux_x64"
+            ]
+        }
+    ]
+}

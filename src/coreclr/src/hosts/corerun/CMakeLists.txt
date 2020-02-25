@@ -34,5 +34,6 @@ else()
 
     # Can't compile on linux yet so only add for windows
     install_clr(TARGETS CoreRun)
+    install(TARGETS CoreRun)
 
 endif(CLR_CMAKE_HOST_UNIX)

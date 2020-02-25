@@ -198,3 +198,11 @@ endif (CLR_CMAKE_HOST_UNIX)
 add_subdirectory(src)
 
 include(definitionsconsistencycheck.cmake)
+
+
+# Create test overlay at the end of the install target on Windows
+if (WIN32)
+  install(CODE "execute_process(COMMAND ${PROJECT_SOURCE_DIR}/build-test.cmd skipmanaged skipnative skiprestorepackages)")
+else ()
+  install(CODE "execute_process(COMMAND ${PROJECT_SOURCE_DIR}/build-test.sh -generatelayoutonly)")
+endif()
